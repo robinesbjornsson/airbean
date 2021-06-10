@@ -53,16 +53,17 @@ export const addProductReducer = (state = initialState.cart, action) => {
   }
 }
 
-export const totalReducer = (state = initialState.cart, action) => {
-  switch (action.type) {
-    case "CALC_TOTAL": {
-      return {
-        ...state,
-        total: state.total + action.payload,
-      };
+export const totalReducer = (state= initialState.cart, action ) =>{
+  switch(action.type){
+    case 'CALC_TOTAL':{
+             return{
+                ...state,
+                 total: state.total + action.payload
+
+                  }
     }
-    default: {
-      return state;
+        default: {
+        return state;
     }
   }
-};
+}

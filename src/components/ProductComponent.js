@@ -6,7 +6,7 @@ import { addProduct } from "../redux/actions";
 
 const ProductComponent = () => {
   const products = useSelector((state) => state.allProducts.products)
-  const cart = useSelector((state) => state.cart)
+  const cart = useSelector((state) => state.addProduct.items);
   const dispatch = useDispatch(); 
 
   const renderList = products.map((product) => {
@@ -14,10 +14,11 @@ const ProductComponent = () => {
       
     const handleClick = () =>  {
 
-      console.log("adding to cart:")
+      console.log("adding to cart:", cart.length)
+    
+
       dispatch(addProduct(product))
 
-      console.log(cart)
       }
     return (
       <div className="" key={id}>
