@@ -1,29 +1,37 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+// import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { useState } from "react";
+import { addProduct } from "../redux/actions";
 
 const ProductComponent = () => {
-    const products = useSelector((state) => state.allProducts.products)
-
-    console.log(products)
-    
+  const products = useSelector((state) => state.allProducts.products)
+  const cart = useSelector((state) => state.cart)
+  const dispatch = useDispatch(); 
 
   const renderList = products.map((product) => {
       const { id, title, desc, price } = product;
       
-      
+    const handleClick = () =>  {
+
+      console.log("adding to cart:")
+      dispatch(addProduct(product))
+
+      console.log(cart)
+      }
     return (
       <div className="" key={id}>
-        <Link to={`/product/${id}`}>
+
           <div className="ui link cards">
             <div className="card">
               <div className="content">
+                <button onClick={() => handleClick()}> + </button>
                 <div className="header"> {title} </div>
                 <div className="meta price"> $ {price} </div>
               </div>
             </div>
           </div>
-        </Link>
+
       </div>
     );
   });
