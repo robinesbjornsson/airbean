@@ -1,16 +1,69 @@
 
-  
 const initialState = {
-
+  currentUser: {},
+  userDatabase: {},
   products: [],
-
-  cart: {
-    items: [],
-    total: 0,
+  cart:{
+      items: [],
+      total: 0
   },
-
+  orders: [],
+  open: false
 }
 
+export const openCart = (state = initialState, action) => {
+  switch (action.type) {
+    case 'OPEN_CART':
+      return { ...state, open: !state.open }
+    default:
+      return state;
+
+  }
+}
+
+export const currentUserReducer = (state = initialState, { type, payload }) => {
+  switch (type) {
+    case "SET_USER":
+      return { ...state.currentUser, currentUser: payload }
+
+    default:
+      return state;
+  }
+}
+
+export const userReducer = (state = initialState, { type, payload }) => {
+  switch (type) {
+
+    case "SET_USERS":
+      return { ...state.userDatabase, userDatabase: payload }
+
+
+    default:
+      return state;
+  }
+};
+
+export const logInReducer = (state = initialState.users, { type, payload }) => {
+  switch (type) {
+    case "LOGIN":
+      return { ...state, users: payload };
+
+    default:
+      return state;
+  }
+};
+
+
+
+export const logOutReducer = (state = initialState, { type }) => {
+  switch (type) {
+    case "LOGOUT":
+      return { users: null };
+
+    default:
+      return state;
+  }
+};
 
 export const productReducer = (state = initialState, { type, payload }) => {
   switch (type) {

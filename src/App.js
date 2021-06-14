@@ -1,22 +1,38 @@
+import "./App.css";
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import HamburgerMenu from "./components/HamburgerMenu";
+import Status from "./components/Status";
+import Profile from "./components/Profile";
+import About from "./components/About";
+import Login from "./components/Login";
+import Cart from "./components/Cart";
+import Products from "./components/ProductList";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Header from "./components/Header";
-import ProductListing from "./components/ProductList";
-import ProductDetail from "./components/ProductDetail";
-
-function App() {
+ const App = () => {
   return (
     <div className="App">
-      <Router>
-        <Header />
+      <BrowserRouter>
+        <HamburgerMenu />
+        <Cart />
         <Switch>
-          <Route path="/" exact component={ProductListing} />
-          <Route path="/product/:productId" exact component={ProductDetail} />
-          <Route>404 not found</Route>
+          <Route exact path="/">
+            <Products />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/profile">
+            <Profile />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/status" >
+            <Status />
+          </Route>
         </Switch>
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }
-
-export default App;
+export default App

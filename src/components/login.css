@@ -1,0 +1,74 @@
+.login_card {
+background-color: #F3E4E1;
+height: 565.7735595703125px;
+width: 341px;
+left: 17px;
+top: 82px;
+border-radius: 3px;
+
+}
+
+h1 {
+height: 97px;
+width: 309px;
+left: 31px;
+top: 139px;
+border-radius: nullpx;
+
+}
+
+h3 {
+height: 55.999996185302734px;
+width: 305px;
+left: 35px;
+top: 230px;
+border-radius: nullpx;
+
+}
+
+.form_label {
+height: 16px;
+width: 279px;
+left: 33px;
+top: 319px;
+border-radius: nullpx;
+
+}
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh; 
+    align-items: center;
+    font-family: "Inter";
+}
+
+.login_form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.login_form input {
+    height: 48px;
+    width: 310px;
+    left: 33px;
+    top: 339px;
+    border-radius: 6px;
+    
+}
+
+
+
+
+.submit_btn {
+background-color: #2F2926;
+color: #ffffff; 
+height: 55px;
+width: 248px;
+left: 64px;
+top: 552px;
+border-radius: 50px;
+
+}

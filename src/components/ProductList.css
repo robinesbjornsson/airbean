@@ -1,0 +1,39 @@
+body{
+background-color: #F3E4E1;
+}
+
+.header {
+height: 46px;
+left: 80px;
+top: 199px;
+border-radius: nullpx;
+}
+
+.add_btn {
+height: 32px;
+width: 32px;
+left: 32px;
+top: 215px;
+border-radius: 20px;
+border: none;
+background: #2F2926;
+color: white; 
+}
+
+.desc {
+height: 23.999998092651367px;
+width: 194.435791015625px;
+left: 80px;
+top: 321px;
+border-radius: nullpx;
+}
+
+.card {
+    border: 2px solid blue; 
+}
+.card_container {
+    border: 2px solid red; 
+    display: flex; 
+    flex-direction: column;
+
+}

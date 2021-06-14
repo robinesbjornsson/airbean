@@ -1,7 +1,8 @@
+import "./ProductList.css"
 import React from "react";
 // import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { useState } from "react";
+// import { useState } from "react";
 import { addProduct } from "../redux/actions";
 
 const ProductComponent = () => {
@@ -21,25 +22,19 @@ const ProductComponent = () => {
 
       }
     return (
-      <div className="" key={id}>
-
-          <div className="ui link cards">
-            <div className="card">
-              <div className="content">
-                <button onClick={() => handleClick()}> + </button>
-                <div className="header"> {title} </div>
-                <div className="meta price"> $ {price} </div>
-              </div>
-            </div>
-          </div>
-
+      <div key={id} className="card" >
+          <button className="add_btn" onClick={() => handleClick()}> + </button>
+          <div className="header"> <h2> {title} ... $ {price}  </h2> </div>
+          <div className="desc"> <p> {desc} </p> </div>
       </div>
     );
   });
 
 
     return (
-        <div>{renderList} </div>
+        <div className="card_container">
+        {renderList} 
+        </div>
     )
 }
 
