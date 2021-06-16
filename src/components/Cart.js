@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import './cart.css'
 import { openCart, resetCart } from "../redux/actions"
 import { setOrder } from "../redux/actions"
+import { setOrderTotal } from "../redux/actions"
 import bag from '../img/bag.svg'
 import { useHistory } from 'react-router-dom';
 
@@ -13,7 +14,6 @@ const Cart = () => {
     const cart = useSelector((state) => state.addProduct.items)
     const total = useSelector((state) => state.addProduct.total)
     const open = useSelector((state) => state.open.open)
-
     const amount = useSelector((state) => state.addProduct.items.length)
     const user = useSelector((state) => state.currentUserReducer.currentUser.id)
     const dispatch = useDispatch();
@@ -41,14 +41,14 @@ const Cart = () => {
     }
 
     const handleClick = async () => {
-        const account = await postOrder({ cart, user })
+        const account = await postOrder({ cart, user, total })
         console.log(account)
-        history.push("/status")
-
         dispatch(setOrder(account))
         dispatch(resetCart())
-     
+        dispatch(openCart(!open))
+        history.push("/status")
     }
+
 
 
     const renderCartList = cart.map((cart) => {
@@ -86,9 +86,9 @@ const Cart = () => {
                 <h1 className="cart-header" >Din beställning</h1>
                 <div>{renderCartList}</div>
                 <div className="cart-total">
-                    <h3>Total</h3> <h3>{total}</h3>
-                    <p>inkl moms + drönarleverans</p>
-                </div>
+                <h3>Total</h3> <h3>{total}</h3>
+                <p>inkl moms + drönarleverans</p>
+            </div>
                 <button onClick={handleClick}>Take my money!</button>
             </div>
         </div>

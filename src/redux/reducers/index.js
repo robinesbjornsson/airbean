@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { productReducer, addProductReducer, openCart,  userReducer, currentUserReducer, orderReducer, } from "./productReducer";
+import { productReducer, addProductReducer, openCart, userReducer, currentUserReducer, orderReducer } from "./reducerCollection";
 
 
 
@@ -9,8 +9,8 @@ const reducers = combineReducers({
   open: openCart,
   userReducer: userReducer,
   currentUserReducer: currentUserReducer,
-  order: orderReducer,
- 
+  orderReducer: orderReducer,
+
 });
 
 export default reducers;

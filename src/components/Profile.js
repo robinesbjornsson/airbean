@@ -1,44 +1,30 @@
-import { getOrders } from './api'
-import { useEffect, React, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import './Profile.css'
+import profileImg from '../img/Profile.png'
+import { React } from "react";
+import { useSelector } from "react-redux";
+import OrderList from './orderList';
+
+
 
 function Profile() {
-  const user = useSelector((state) => state.currentUserReducer.currentUser)
-
-  const [orders, setOrders] = useState([]);
-
-  useEffect(() => {
-    async function fetchData() {
-      const orderData = await getOrders(user.id);
-      console.log("orderData:", orderData)
-      setOrders(orderData)
-    }
-    fetchData();
-
-  }, [user.id])
-
-
-  const renderOrder = orders.map((order) => {
-   
+    const user = useSelector((state) => state.currentUserReducer.currentUser)
+    const orderTotal = useSelector((state) => state.orderReducer.orderTotal)
 
     return (
-
-              <li key={order.id}>{order.id}</li>
-
-    
+        <div className="profile">
+            <div className="profile-content">
+                <img className="profileImg" src={profileImg} alt="" />
+                <h2> {user.userName} </h2>
+                <div className="orderhistorik">
+                    <h2>Orderhistorik</h2>
+                    <div>
+                        <OrderList />
+                    </div>
+                    <p>totalt spenderat: {orderTotal}</p>
+                </div>
+            </div>
+        </div>
     );
-  })
-  return (
-
-    <div className="orderhistorik">
-    <h2>Orderhistorik</h2>
-
-     {renderOrder}  
-    </div>
-
-  
-  );  
 }
- 
 
 export default Profile

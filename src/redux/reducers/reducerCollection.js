@@ -1,15 +1,19 @@
-
 const initialState = {
+  products: [],
   currentUser: {},
   userDatabase: {},
-  products: [],
-  cart:{
-      items: [],
-      total: 0
+  cart: {
+    items: [],
+    total: 0
   },
-  orders: [],
-  open: false
-}
+  orders: {
+    order: [],
+    orderTotal: 0
+  },
+  orderTotal: 0,
+  open: false,
+};
+
 
 
 export const resetCartReducer = (state = initialState, action) => {
@@ -36,10 +40,18 @@ export const openCart = (state = initialState, action) => {
   }
 }
 
-export const orderReducer = (state = initialState, { type, payload }) => {
-  switch (type) {
+export const orderReducer = (state = initialState.orders, action) => {
+  switch (action.type) {
+
     case "SET_ORDER":
-      return { ...state.orders, orders: payload}
+      return {
+        ...state,
+        order: [...state.order, action.payload],
+        orderTotal: state.orderTotal + action.payload.total
+      }
+
+
+
     default:
       return state;
   }

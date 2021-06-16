@@ -74,3 +74,10 @@ export const openCart = (open) => {
 
   }
 }
+
+export const setOrderTotal = (values) => {
+  return {
+    type: "SET_ORDER_TOTAL",
+    payload: values
+  }
+}
