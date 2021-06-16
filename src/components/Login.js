@@ -1,9 +1,8 @@
 
 import React, { useState } from 'react'
-// import { thisUser, setUsers} from "../redux/actions";
 import { setUser } from "../redux/actions";
 import { useDispatch } from 'react-redux'
-// import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import  './login.css'
 
 const Login = (props )=> {
@@ -12,7 +11,7 @@ const [userName, setUsername] = useState('')
 const [password, setPassword] = useState('')
   
 const dispatch = useDispatch()
-//const history = useHistory()
+const history = useHistory()
 
 
 const submit = async (e, { userName, password}) => {
@@ -58,7 +57,7 @@ const submit = async (e, { userName, password}) => {
     const account = await postLogin({ userName, password })
     console.log(account)
     dispatch(setUser(account)) //detta ska dispatchas
-    //history.push("/profile")
+    history.push("/profile")
   } else {
     //error message
   }
@@ -79,9 +78,11 @@ const handleSubmit = (e) => {
 */
   return (
 
+    <div className="login_container"> 
+
     <div className="login_card"> 
 
-      <h1> Välkommen till AirBean-familjen! </h1>
+      <h2> Välkommen till AirBean-familjen! </h2>
       <h3> Genom att skapa ett konto nedan kan du spara och se din orderhistorik. </h3>
 
 
@@ -100,7 +101,7 @@ const handleSubmit = (e) => {
       <button className="submit_btn" type="submit">Submit</button>
 
     </form>
-
+    </div>
     </div>
 
   )

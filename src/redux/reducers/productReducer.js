@@ -11,6 +11,21 @@ const initialState = {
   open: false
 }
 
+
+export const resetCartReducer = (state = initialState, action) => {
+  switch(action.type){
+   
+     case "RESET_CART":
+       return {
+          ...state,
+          cart: null
+       }
+     default:
+       return state  
+  }
+}
+
+
 export const openCart = (state = initialState, action) => {
   switch (action.type) {
     case 'OPEN_CART':
@@ -20,6 +35,15 @@ export const openCart = (state = initialState, action) => {
 
   }
 }
+
+export const orderReducer = (state = initialState, { type, payload }) => {
+  switch (type) {
+    case "SET_ORDER":
+      return { ...state.orders, orders: payload}
+    default:
+      return state;
+  }
+};
 
 export const currentUserReducer = (state = initialState, { type, payload }) => {
   switch (type) {
@@ -100,6 +124,12 @@ export const addProductReducer = (state = initialState.cart, action) => {
         total: state.total + action.payload.price,
       };
     }
+    case "RESET_CART":
+      return {
+          ...state,
+        items: [],
+        total: 0,
+      }
     default: {
       return state;
     }

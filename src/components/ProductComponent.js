@@ -1,9 +1,8 @@
 import "./ProductList.css"
 import React from "react";
-// import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-// import { useState } from "react";
 import { addProduct } from "../redux/actions";
+import AddBtn from './addButton.png'
 
 const ProductComponent = () => {
   const products = useSelector((state) => state.allProducts.products)
@@ -22,11 +21,25 @@ const ProductComponent = () => {
 
       }
     return (
-      <div key={id} className="card" >
-          <button className="add_btn" onClick={() => handleClick()}> + </button>
-          <div className="header"> <h2> {title} ... $ {price}  </h2> </div>
-          <div className="desc"> <p> {desc} </p> </div>
+      <div className="item" key={id}>
+
+      <div className="item-content">
+        <div>
+          <a className="addBtn" onClick={handleClick}>
+            <img class="button-img" src={AddBtn} alt="" />
+          </a>
+        </div>
+
+        <div className="title-div">
+          <h2 id="left" className="title"> {title} </h2>
+          <p id="left" className="desc">{desc}</p>
+        </div>
+        <div className="price-div">
+          <h2 className="price"> {price} kr</h2>
+        </div>
       </div>
+
+    </div>
     );
   });
 

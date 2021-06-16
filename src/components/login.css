@@ -1,13 +1,26 @@
-.login_card {
+
+.login_container {
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+text-align: center;
 background-color: #F3E4E1;
 height: 565.7735595703125px;
-width: 341px;
+
 left: 17px;
 top: 82px;
-border-radius: 3px;
+border: 2px solid red;
+width: 80vw;
+
 
 }
 
+.login_card {
+    border: 2px solid red;
+  
+    
+}
 h1 {
 height: 97px;
 width: 309px;
@@ -34,14 +47,6 @@ top: 319px;
 border-radius: nullpx;
 
 }
-.login {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100vh; 
-    align-items: center;
-    font-family: "Inter";
-}
 
 .login_form {
     display: flex;
@@ -55,8 +60,9 @@ border-radius: nullpx;
     width: 310px;
     left: 33px;
     top: 339px;
-    border-radius: 6px;
-    
+    border-radius: 10px;
+    border: 2px solid black;
+    background-color: #F3E4E1;
 }
 
 

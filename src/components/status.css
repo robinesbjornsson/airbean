@@ -1,0 +1,23 @@
+
+
+.content {
+   background: #E5674E;
+   height: 100vh;
+    
+}
+
+.content h1 {
+    color: white;
+}
+
+
+.okBtn Link {
+color: black;
+font-family: PT Serif;
+font-size: 32px;
+font-style: normal;
+border-radius: 50px;
+border: none;
+text-align: center;
+
+}

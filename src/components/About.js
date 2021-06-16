@@ -1,5 +1,5 @@
 
-function About() {
+export const About = () => {
 
 
   return (
@@ -19,12 +19,10 @@ function About() {
           </p>
           <div className="aboutContent">
      
-          <h3 className="eva" >Eva Cortado</h3>
-          <p className="eva">Vd och Grundare</p>
+          <h3 className="founderName" >Eva Cortado</h3>
+          <p className="founderTitle">Vd och Grundare</p>
         </div>
     </div>
   );
 };
 
-
-export default About

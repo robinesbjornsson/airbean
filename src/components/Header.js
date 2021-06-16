@@ -1,18 +1,12 @@
-import React from 'react'
- import { useSelector } from "react-redux";
+import Menu from './Menu'
+import Cart from './Cart'
+import './header.css'
 
-function Header() {
-   
-
-      const cart = useSelector((state) => state.addProduct.items);
-
-
+export default function Header() {
     return (
-  
-    <div>
-            <h1> Shopping Cart: {cart.length} items</h1>
-    </div>
-  );
+        <nav>
+        <div className="menu">  <Menu/> </div>
+        <div className="cart">  <Cart/></div>
+        </nav>
+    )
 }
-
-export default Header;

@@ -1,9 +1,10 @@
 import "./App.css";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import HamburgerMenu from "./components/HamburgerMenu";
+import Menu from "./components/Menu";
+import Header from "./components/Header";
 import Status from "./components/Status";
 import Profile from "./components/Profile";
-import About from "./components/About";
+import {About} from "./components/About";
 import Login from "./components/Login";
 import Cart from "./components/Cart";
 import Products from "./components/ProductList";
@@ -12,8 +13,7 @@ import Products from "./components/ProductList";
   return (
     <div className="App">
       <BrowserRouter>
-        <HamburgerMenu />
-        <Cart />
+        <Header />
         <Switch>
           <Route exact path="/">
             <Products />

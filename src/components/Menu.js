@@ -1,22 +1,20 @@
-
 import { useState } from 'react';
 import Hamburger from 'hamburger-react'
 import { Link, } from 'react-router-dom';
-// import { useSelector , useDispatch} from "react-redux";
+import { useSelector , useDispatch} from "react-redux";
+import Cart from './Cart'
+import './menu.css'
+import { openCart } from "../redux/actions"
 
+import headerImg from '../img/header.png'
+import bag from '../img/bag.svg'
 
-
-
-export default function HamburgerMenu() {
-    //const amount = useSelector((state) => state.addProduct.items.length)
-    // const open = useSelector((state) => state.openCart.open)
+export default function Menu() {
+    const amount = useSelector((state) => state.addProduct.items.length)
+    const open = useSelector((state) => state.open.open)
     const [isOpen, setOpen] = useState(false)
-    // const dispatch = useDispatch();
-    // const [isCartOpen, setCartOpen] = useState(false)
-    
-    // const handleCartOpen = () =>{
-    //   dispatch(openCart(open))
-    // }
+    const dispatch = useDispatch();
+  
     
 
     const handleOpen = () => {
@@ -41,13 +39,7 @@ export default function HamburgerMenu() {
                         distance="lg"
                     />
                 </div>
-                <div className="wrapper">
-                    {/* <button onClick={handleCartOpen}className="cart-button" >
-                        <span > {amount} </span>
-                        <img className="img" src={bag} alt="" />
-                    </button> */}
-                    
-                </div>
+            
             </div>
 
             <div id="mobile-links" >

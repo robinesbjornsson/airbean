@@ -19,10 +19,23 @@ export const logoutAction = () => {
   }
 }
 
+export const resetCart = () => {
+ return {
+   type: 'RESET_CART'
+ }
+}
+
 export const setUsers = (users) => {
   return {
       type: "SET_USERS",
       payload: users
+  }
+}
+
+export const setOrder = (values) => {
+  return {
+    type: "SET_ORDER",
+    payload: values
   }
 }
 
