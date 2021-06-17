@@ -1,18 +1,52 @@
 
 
 .status {
+    border: 2px solid red; 
    background: #E5674E;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   text-align: center;
    height: 100vh;
-   color: white; 
+   z-index: 1;
+
+   
     
 }
-
-.content h1 {
-    color: white;
+.orderNumberSpan {
+    font-family: Work Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: center;
+    
+    font-family: Work Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: center;
+    
+}
+.status img {
+    height: 120px;
+    width: 220px;
 }
 
 
-.okBtn Link {
+
+.status-content button  {
+    border: 2px solid blue; 
+    display: flex;
+    flex-direction: column;
+    color: black
+}
+
+
+.ok-button {
 color: black;
 font-family: PT Serif;
 font-size: 32px;
@@ -21,4 +55,13 @@ border-radius: 50px;
 border: none;
 text-align: center;
 
+}
+
+a link {
+    color: black;
+
+}
+
+a  {
+    color: black;
 }

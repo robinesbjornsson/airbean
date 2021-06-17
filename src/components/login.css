@@ -1,80 +1,88 @@
-
 .login_container {
-display: flex;
-justify-content: center;
-flex-direction: column;
-align-items: center;
-text-align: center;
-background-color: #F3E4E1;
-height: 565.7735595703125px;
+  font-family: "Work Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  background-color: #f3e4e1;
+  height: 565px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 7px;
 
-left: 17px;
-top: 82px;
-border: 2px solid red;
-width: 80vw;
+  left: 17px;
+  top: 82px;
 
-
+  width: 90vw;
 }
 
 .login_card {
-    border: 2px solid red;
-  
-    
+  height: 80vh;
+  font-family: "PT Serif", serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
-h1 {
-height: 97px;
-width: 309px;
-left: 31px;
-top: 139px;
-border-radius: nullpx;
 
+.login_card img {
+  height: 30px;
+  width: 30px;
+}
+
+.login_card h1 {
+  font-size: 35px;
 }
 
 h3 {
-height: 55.999996185302734px;
-width: 305px;
-left: 35px;
-top: 230px;
-border-radius: nullpx;
-
+  margin: 10px;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 100;
+  font-size: 16px;
 }
 
-.form_label {
-height: 16px;
-width: 279px;
-left: 33px;
-top: 319px;
-border-radius: nullpx;
-
+.form-label {
+    
 }
 
 .login_form {
+    border: 2px solid green; 
+    width: 80vw;
     display: flex;
     flex-direction: column;
 }
 
 
-
 .login_form input {
-    height: 48px;
-    width: 310px;
-    left: 33px;
-    top: 339px;
-    border-radius: 10px;
-    border: 2px solid black;
-    background-color: #F3E4E1;
+  font-family: 'Work Sans', sans-serif;
+  color: black; 
+  height: 48px;
+  width: 310px;
+  left: 33px;
+  top: 339px;
+  border-radius: 10px;
+  border: 2px solid black;
+  background-color: #f3e4e1;
 }
 
+.checkbox-div {
 
-
-
+}
+#gdpr-checkbox {
+    border: 1px solid black; 
+    height: 16px;
+    width: 16px;
+}
 .submit_btn {
-background-color: #2F2926;
-color: #ffffff; 
-height: 55px;
-width: 248px;
-left: 64px;
-top: 552px;
-border-radius: 50px;
-
+font-family: "PT Serif", serif;
+  font-size: 25px;
+  background-color: #2f2926;
+  color: #ffffff;
+  height: 55px;
+  width: 248px;
+  left: 64px;
+  top: 552px;
+  border-radius: 50px;
 }

@@ -5,7 +5,10 @@
 }
 
 body {
-    background: #2F2926;
-    background-color: #2F2926;
+    background: #2F2926;   
+    background-image: url('./img/leaves.png');
+    background-position: top;
+    background-repeat: no-repeat;
+
 }
 

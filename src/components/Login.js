@@ -4,6 +4,7 @@ import { setUser } from "../redux/actions";
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
 import  './login.css'
+import logo from '../img/login_logo.png'
 
 const Login = (props )=> {
 
@@ -82,23 +83,29 @@ const handleSubmit = (e) => {
 
     <div className="login_card"> 
 
-      <h2> Välkommen till AirBean-familjen! </h2>
+
+        <img src={logo} alt="airbean's logga" /> 
+      <h1> Välkommen till AirBean-familjen! </h1>
       <h3> Genom att skapa ett konto nedan kan du spara och se din orderhistorik. </h3>
 
 
     <form className="login_form" onSubmit={(e) => submit(e, { userName, password} )}>
 
-      <div>
+      <div >
         <label className="form_label" htmlFor="firstName">Username</label>
         <input type="username" placeholder="username" value={userName}  onChange={(e) => setUsername(e.target.value)}/> 
       </div>
 
-      <div>
+      <div >
         <label className="form_label" htmlFor="password">Password</label>
         <input type="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)}/> 
       </div>
 
-      <button className="submit_btn" type="submit">Submit</button>
+      <div className="checkbox-div"> 
+      <input id="gdpr-checkbox" type="radio" /> GDPR OK 
+      </div>
+      
+      <button className="submit_btn" type="submit">Logga in</button>
 
     </form>
     </div>

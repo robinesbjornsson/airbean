@@ -1,4 +1,5 @@
 import "./ProductList.css"
+import Cart from './Cart'
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addProduct } from "../redux/actions";
@@ -45,8 +46,13 @@ const ProductComponent = () => {
 
 
     return (
+      <div>
+      <div>
+      <div className="cart">  <Cart/> </div>
+      </div>
         <div className="card_container">
         {renderList} 
+        </div>
         </div>
     )
 }

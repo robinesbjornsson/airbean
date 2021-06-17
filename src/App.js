@@ -12,8 +12,11 @@ import Products from "./components/ProductList";
  const App = () => {
   return (
     <div className="App">
+ 
+ 
       <BrowserRouter>
-        <Header />
+      <Header />
+
         <Switch>
           <Route exact path="/">
             <Products />

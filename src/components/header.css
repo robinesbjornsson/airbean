@@ -1,9 +1,0 @@
-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-image: url("../img/header_image.png");
-    background-size: 370px 100px;
-
-}
-
