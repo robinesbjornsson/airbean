@@ -1,13 +1,15 @@
 import "./ProductList.css"
-import { useEffect, React } from "react";
+import { useState, useEffect, React } from "react";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import ProductComponent from "./ProductComponent";
 
 import { setProducts } from "../redux/actions";
 
-const ProductList = () =>  {
+const ProductList = ({setColor}) =>  {
 
+
+     
      const products = useSelector((state) => state.allProducts.products);
      const dispatch = useDispatch();
 
@@ -21,13 +23,14 @@ const ProductList = () =>  {
   };
 
   useEffect(() => {
+    setColor('#F3E4E1')
     fetchProducts();
   }, []);
 
   console.log("Products :", products);
 
   return (
-    <div className="ui grid container">
+    <div className="product-container">
       <ProductComponent />
     </div>
   );

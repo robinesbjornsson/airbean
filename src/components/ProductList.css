@@ -1,11 +1,12 @@
 
-.container {
-  margin: 7rem auto;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.product-container{
+  z-index: 1;
+
+height: 100%;
+
 }
+
+
 
 .item {
   display: flex;
@@ -35,10 +36,12 @@
 }
 
 .item-content {
+
   display: flex;
   flex-direction: row;
-  max-width: 100%;
+
   width: 100vw;
+
   justify-content: space-evenly;
 }
 

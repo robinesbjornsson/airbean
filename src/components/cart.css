@@ -27,7 +27,7 @@ top: 12px;
 .cart-header {
     text-align: center;
 }
-
+/* 
 .cart-container {
     display: flex;
     flex-direction: column;
@@ -38,12 +38,15 @@ top: 12px;
     text-align: center;
     position: absolute;
     background-color: blue;
+    border: 2px solid red;
 }
-
+*/
 .cart-card {
-    width: 90vw;
+  
     background: white;
-    height: 90vh;
+    border-radius: 4px;
+
+
 
 }
 
@@ -59,8 +62,10 @@ top: 12px;
 }
 
 .buttonContainer {
-    display: flex;
-    justify-content: flex-end;
+    top:0vw;
+    right: 0;
+    position: fixed;
+
 }
 
 .buttonContainer .bag {
@@ -83,10 +88,24 @@ top: 12px;
 
 .showCart {
 
-    width: 100%;
-    max-width: 100vw;
-    transition: transform 0.3s ease-in-out;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    margin-left:auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    height: 80vh;
+    transition: transform 1.3s ease-in-out;
     transform: translateX(0);
+}
+
+.showCart p {
+    font-size: 12px;
+ 
+    
 }
 
 .hideCart {
@@ -101,10 +120,31 @@ top: 12px;
 }
 
 
-.cart-content {
+
+.cart_total {
+    margin: 15px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
 
 
+
+.total_price_num{
+    align-self: flex-end;
+}
+.buy_button {
+ 
+        font-family: "PT Serif", serif;
+          font-size: 25px;
+          background-color: #2f2926;
+          color: #ffffff;
+          height: 55px;
+          width: 248px;
+          left: 64px;
+          top: 552px;
+          border-radius: 50px;
+          border: none; 
+        
+        
 }

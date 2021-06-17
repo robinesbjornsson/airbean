@@ -2,8 +2,10 @@ import "./status.css";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import droneImg from '../img/drone.png'
+import { useHistory } from 'react-router-dom';
 
-function Status() {
+export const OrderStatus = () => {
+  const history = useHistory()
   const order = useSelector((state) => state.orderReducer.order);
 
   const lastItem = order[order.length - 1];
@@ -27,18 +29,22 @@ function Status() {
       <button className="ok-button"><Link className="link" to="/menu">Ok, cool!</Link></button>
 
   
-  
+
       </div>
     );
   } else {
     return (
       <div>
-      <h1> Inga beställningar! </h1>
+      <div className="empty_state_container">
+      <h1> Du har inte gjort någon beställning. </h1>
+       <button onClick={() => { history.push("/")}}> Ta mig till kaffemenyn! </button>
+      </div>
+   
       </div>
     )
   }
 
 }
 
-export default Status;
+export default OrderStatus;
 

@@ -1,6 +1,6 @@
 import "./ProductList.css"
 import Cart from './Cart'
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addProduct } from "../redux/actions";
 import AddBtn from './addButton.png'
@@ -9,6 +9,13 @@ const ProductComponent = () => {
   const products = useSelector((state) => state.allProducts.products)
   const cart = useSelector((state) => state.addProduct.items);
   const dispatch = useDispatch(); 
+
+  
+  useEffect(() => {
+    document.body.backgroundColor = "#f3e4e1;"
+
+  }, []);
+
 
   const renderList = products.map((product) => {
       const { id, title, desc, price } = product;
@@ -21,6 +28,8 @@ const ProductComponent = () => {
       dispatch(addProduct(product))
 
       }
+
+      
     return (
       <div className="item" key={id}>
 

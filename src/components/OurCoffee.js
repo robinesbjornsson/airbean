@@ -1,9 +1,14 @@
+import { useEffect } from 'react';
+import './ourCoffee.css'
+import Eva from '../img/eva.jpg'
+function OurCoffee ({setColor} ) {
 
-export const About = () => {
-
+  useEffect(() => {
+    setColor('#F3E4E1')
+  }, []);
 
   return (
-    <div className="about">
+    <div className="text-content">
       
         <h1>Vårt kaffe</h1>
           <p id="bold">
@@ -17,12 +22,13 @@ export const About = () => {
             At extra, rich grinder, brewed to go, steamed half and half at, that, percolator macchiato trifecta and body as arabica dripper. 
             In galão black java milk sit trifecta, robusta, acerbic café au lait instant shop latte. Seasonal bar shop filter aroma id, crema, affogato viennese cultivar aftertaste, seasonal, percolator cream black, galão flavour, milk aromatic turkish skinny crema.
           </p>
-          <div className="aboutContent">
+         
      
           <h3 className="founderName" >Eva Cortado</h3>
           <p className="founderTitle">Vd och Grundare</p>
-        </div>
+          <img src={Eva}/>
     </div>
   );
 };
 
+export default OurCoffee

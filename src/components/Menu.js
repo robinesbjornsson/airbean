@@ -49,7 +49,7 @@ export default function Menu() {
                     </li>
                     <div id="menu-line"></div>
                     <li>
-                        <Link onClick={() => closeMenu()} to="/about">Vårt kaffe </Link>
+                        <Link onClick={() => closeMenu()} to="/ourcoffee">Vårt kaffe </Link>
                     </li>
                     <div id="menu-line"></div>
                     <li>

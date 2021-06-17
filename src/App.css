@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 
-body {
-    background: #2F2926;   
+.App {
+   
     background-image: url('./img/leaves.png');
     background-position: top;
     background-repeat: no-repeat;
